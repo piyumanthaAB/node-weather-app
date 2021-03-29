@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 50%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-image: url("images/mobile/Cover-6-m.jpg");
+  background-size: cover;
+  background-position: bottom;
+  position: relative;
+  z-index: 1;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+body::before {
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  z-index: -1;
+}
+
+a {
+  text-decoration: none;
+}
+.container {
+  width: 80%;
+  height: 90vh;
+  background-image: url("images/mobile/Cover-6-m.jpg");
+  background-size: cover;
+  background-position: bottom;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+.container__top {
+  width: 100%;
+  height: 45vh;
+  position: relative;
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.7)
+  );
+}
+
+.heading-box {
+  position: absolute;
+  top: 8rem;
+  left: 5rem;
+  line-height: 3.5rem;
+}
+
+.heading__primary--main {
+  color: white;
+  font-size: 4rem;
+  font-weight: 400;
+}
+.heading__primary--sub {
+  color: white;
+  font-size: 2rem;
+  font-weight: 400;
+}
+#search {
+  position: absolute;
+  top: 22rem;
+  left: 5rem;
+  width: 80%;
+  height: 5rem;
+  border-radius: 100px;
+  background-color: rgba(51, 51, 51, 0.404);
+  border: 2px solid white;
+  color: white;
+  padding-left: 5rem;
+  font-weight: 700;
+}
+
+#search::placeholder {
+  color: white;
+  /* padding-left: 5rem; */
+  font-weight: 700;
+}
+#search:focus {
+  outline: none;
+  transform: scale(1.1);
+  transition: all 0.35s ease-in-out;
+}
+
+.search-icon-container {
+  background-color: transparent;
+  border: none;
+  color: white;
+  position: absolute;
+  top: 23.5rem;
+  right: 7rem;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+.search-icon-container:focus {
+  outline: none;
+}
+#search:focus + .search-icon-container {
+  transform: scale(1.2);
+}
+.suggest-heading {
+  color: white;
+  font-size: 2rem;
+  position: absolute;
+  left: 5rem;
+  bottom: 0;
+  font-weight: 400;
+}
+.container__bottom {
+  width: 100%;
+  height: 45vh;
+}
+.container__bottom::before {
+  content: "";
+  width: 100%;
+  height: 45vh;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.8) 50%,
+    rgba(0, 0, 0, 1)
+  );
+  /* background-color: rgba(0, 0, 0, 0.45); */
+  /* backdrop-filter: blur(100px); */
+}
+
+.container__bottom .carousel {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 30px;
+}
+
+.carousel .card {
+  width: 20rem;
+  height: 35vh;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  /* font-weight: bold; */
+  margin: 20px 0;
+  border-radius: 20px;
+  transition: all 0.4s;
+}
+
+.cardHeading__container {
+  padding-top: 4rem;
+  /* background-color: red; */
+}
+.card__city-name {
+  position: relative;
+  /* margin-top: 5rem; */
+  letter-spacing: 2px;
+  font-size: 3rem;
+}
+.card__time {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.card__temp {
+  font-size: 5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.cardBottom__container {
+  /* display: inline; */
+  width: 100%;
+  /* background-color: red; */
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.card__status-text {
+  text-align: unset;
+  position: absolute;
+  right: 2rem;
+  bottom: 4.5rem;
+  font-weight: 400;
+}
+
+.card__status {
+  position: absolute;
+  bottom: 7rem;
+  left: 8rem;
+}
+
+.carousel .card-1 {
+  background-size: cover;
+  background-position: bottom;
+}
+.carousel .card-2 {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("images/mobile/Jaffna-m.jpg");
+  background-size: cover;
+  background-position: bottom;
+}
+.carousel .card-3 {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ),
+    url("images/mobile/Sigiriya-m.jpg");
+  background-size: cover;
+  background-position: bottom;
+}
+.carousel .card-4 {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ),
+    url("images/mobile/Kandy-m.jpg");
+  background-size: cover;
+  background-position: bottom;
+}
+
+.owl-dots {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.owl-dot {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 100px;
+  cursor: pointer;
+  outline: none;
+  margin: 0 5px;
+  border: 1px solid #555 !important;
+  background-color: #555 !important;
+  transition: all 0.3s ease;
+}
+.owl-dot:hover {
+  background-color: white !important;
+}
+
+.owl-dot.active {
+  background-color: white !important;
+}

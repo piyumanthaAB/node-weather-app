@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="https://kit.fontawesome.com/bd44c94d16.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="weather-fonts.css">
+    <link rel="stylesheet" href="styles_test.css">
+
+    <title>Weather App</title>
+
+    <%if (image.includes('-d.jpg')){%>
+    <style>
+        
+     /* .city-list a{
+         color: #111;
+     } */
+     @media only screen and (max-width: 37.5em) {
+         .content{
+             /* color: #333; */
+         }
+         .list-left{
+             /* color: #555; */
+         }
+
+     }
+
+     
+     .card__left-info-container{
+         
+         /* color: #333; */
+     }
+     .card__left-icon{
+         font-weight: bolder;
+     }
+
+     .right__content ,a ,input{
+         color: #333 !important;
+         border-color: #333 !important;
+     }
+     hr{
+         background-color: #333 !important;
+         border-color: #333 !important;
+     }
+     .search-city,.search-city::placeholder{
+         color: white  !important;
+     }
+     .search-icon{
+         background-color: #333;
+         
+     }
+     .search-city:focus{
+         border-bottom-color: #555 !important;
+         
+     }
+     .search-city:focus::placeholder{
+         color: #CCC !important;
+         
+     }
+
+    </style>
+    <%}%>
+</head>
+<body style="background-image: url(/images/<%=image%>);">
+<!-- <body style="background-image: url(/images/Thunderstorm-n.jpg);"> -->
+    
+    <main>
+        
+        <div class="card" style="background-image: url('/images/<%=image%>');">
+            <div class="card__left">
+                <div class="card__left-info-container">
+                    <h1 class="card__left-temp"><%=temp%> &#176;</h1>
+
+                    <div class="card__left-info">
+                        <p class="card__left-city"><%=city%></p>
+                        <p class="card__left-date">  <%=dateString%></p>
+                        <div class="card__left-icon">
+                            <p><ion-icon name="<%=iconName%>" size="large" ></ion-icon></p>
+                            <p class="card__left-icon-text"><%=condition%></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card__right">
+                
+                    <div class="right__content">
+                        <div class="right-top">
+                            <form id="search-form">
+                            <input type="text" class="search-city" placeholder="Enter a city ..." id="city-input" required>
+                            
+                            <button class="search-icon">
+                                <ion-icon name="search-outline" class="icon__search" size="small"></ion-icon>
+                            </button>
+
+                        </form>
+                        </div>
+                        <div class="right-middle">
+                            
+                            <ul class="city-list">
+                                
+                                <%searchList.forEach((el)=>{%>
+                                    <li><a href="/<%=el%>"><%=el%></a></li>
+                                <%})%>
+                                
+                                
+                            </ul>
+                            <hr class="right__hr">
+                        </div>
+                        <div class="right-bottom">
+                            <h1 class="right__heading">Weather Details</h1>
+                            <ul class="city-list" style="float: left;">
+                                <li>Feels Like</li>
+                                <li>Cloudy</li>
+                                <li>Humidity</li>
+                                <li>Wind</li>
+                                
+                            </ul>
+                            <ul class="city-list list--right" >
+                                <li><%=feelsLike%> &#176;</li>
+                                <li><%=cloudy%>%</li>
+                                <li><%=humidity %>%</li>
+                                <li><%=wind%>m/s</li>
+                                
+                            </ul>
+                            <hr class="right__hr">
+                        </div>
+                    </div>
+
+                
+            </div>
+        </div>
+    </main>
+
+    <section class="mobile" style="background-image: url(/images/<%=image%>);">
+        <div class="back_icon-container">
+            <a href="/"><ion-icon name="chevron-back-outline" class="back-icon" size="small"></ion-icon></a>
+        </div>
+        <div class="top">
+            <div class="content">
+                <h1><ion-icon name="<%=iconName%>"size="large"></ion-icon></h1>
+                <p class="city"><%=city%></p>
+                <p class="time"><%=condition%>, <%=timeMobile%></p>
+                <p class="temp"><%=temp%>&#176;</p>
+            </div>
+
+        </div>
+        <div class="bottom">
+            <div class="content_bottom">
+                <h1 class="bottom-h">Weather Details</h1>
+                <div class="li-container">
+                    <div class="container-left">
+                        <ul class="list-left">
+                            <li>Feels Like</li>
+                            <li>Cloudy</li>
+                            <li>Humidity</li>
+                            <li>Wind</li>
+                        </ul>
+                    </div>
+                    <div class="container-right">
+                        
+                        <ul class="list-right">
+                            <li><%=feelsLike%> &#176;</li>
+                                <li><%=cloudy%>%</li>
+                                <li><%=humidity %>%</li>
+                                <li><%=wind%>m/s</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+  </body>
+  <script src="main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+</html>

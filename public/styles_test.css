@@ -1,0 +1,449 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* background-image: url("./images/cloudy-1.jpg"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  font-family: "Lato", sans-serif;
+}
+
+body::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* background-image: url("./images/cloudy-1.jpg"); */
+  background-color: rgba(255, 255, 255, 0.1);
+  background-size: cover;
+  background-position: top;
+  height: 100%;
+  /* filter: blur(5px); */
+  backdrop-filter: blur(10px);
+  /* transform: scale(1); */
+}
+
+main {
+  width: 100%;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.card {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  height: 80vh;
+  display: table;
+  background-size: cover;
+  background-position: bottom;
+  border-radius: 10px;
+}
+
+/* LEFT CARD STYLING START */
+
+.card__left {
+  /* background-color: red; */
+  width: 60%;
+  display: table-cell;
+}
+
+.card__left-info-container {
+  position: absolute;
+  left: 4rem;
+  bottom: 10rem;
+  color: white;
+}
+
+.card__left-temp {
+  display: inline;
+  font-size: 8rem;
+  /* line-height: 5rem; */
+}
+
+.card__left-info {
+  position: relative;
+  margin-top: 2rem;
+  font-size: 4rem;
+}
+.card__left-date {
+  font-size: 1.5rem;
+}
+.card__left-icon {
+  width: 20rem;
+  position: absolute;
+  left: 25rem;
+  bottom: 0rem;
+  font-size: 2rem;
+  max-width: max-content;
+}
+
+.card__left-icon-text {
+  font-size: 1.5rem;
+}
+/* LEFT CARD STYLING END */
+
+/* RIGHT CARD STYLING START */
+.card__right {
+  width: 40%;
+  display: table-cell;
+  border-radius: 10px;
+}
+
+.card__right::before {
+  content: "";
+  width: 40%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(100px);
+  z-index: 3;
+  overflow: hidden;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.right__content {
+  padding-left: 5rem;
+  width: 40%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #999;
+  z-index: 10;
+}
+.right-top {
+  width: 100%;
+  height: 10vh;
+  overflow: hidden;
+
+  /* background-color: red; */
+}
+.right-middle {
+  width: 100%;
+  height: 25vh;
+  /* padding-top: 4rem; */
+  /* background-color: green; */
+}
+.right-bottom {
+  padding-top: 2rem;
+  width: 100%;
+  height: 35vh;
+  position: relative;
+  /* background-color: blue; */
+}
+.search-city {
+  border: none;
+  border-bottom: 2px solid #999;
+  background-color: transparent;
+  margin-top: 2rem;
+  width: 70%;
+  height: 5rem;
+  font-size: 1.5rem;
+  line-height: 0;
+  transition: all 0.2s;
+  padding-bottom: 1rem;
+  color: #999;
+}
+
+.search-city::placeholder {
+  color: white;
+  transition: all 0.2s;
+}
+.search-city:focus::placeholder {
+  color: #999;
+  transition: all 0.2s;
+}
+
+.search-city:focus {
+  outline: none;
+  caret-color: #999;
+  border-bottom-color: #222;
+  padding-bottom: 0rem;
+}
+.search-icon {
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 15%;
+  height: 12%;
+  background-color: #999;
+  color: white;
+  border: none;
+  border-top-right-radius: 10px;
+  transition: all 0.2s;
+}
+.search-icon:focus {
+  outline: none;
+}
+.search-icon:hover {
+  background-color: #555;
+}
+.search-icon:hover .icon__search {
+  position: relative;
+  top: 0;
+  left: 0;
+  transform: scale(1.5);
+}
+.icon__search {
+  display: block;
+  margin: 0 auto;
+  font-size: 2rem;
+  transition: all 0.1s;
+}
+
+.city-list {
+  font-weight: 400;
+  list-style: none;
+  font-size: 1.25rem;
+  line-height: 4rem;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+.city-list a {
+  text-decoration: none;
+  color: #999;
+}
+.right__hr {
+  margin-top: 0rem;
+  width: 80%;
+  border: 1px solid #999;
+  background-color: #999;
+}
+.right__heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+.list--right {
+  color: white;
+  margin-left: 70%;
+}
+
+/*
+
+0 - 600px   :   phone
+600 - 900px   :   tablet portraite
+900 - 1200px   :   tablet landscape
+[1200 - 1800 ] : is our normal styles is applied
+1800+   :   Big screes
+
+
+*/
+
+/*
+# breakpoint argument choises
+
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+
+1em = 16px
+
+ORDER: Base + typography > general layout + grid > page layout > components
+*/
+@media only screen and (min-width: 37.5em) {
+  .mobile {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  main {
+    display: none;
+  }
+  .mobile {
+    overflow: hidden;
+    width: 80%;
+    height: 90vh;
+    /* background-image: url("/images/Thunderstorm-n.jpg"); */
+
+    background-position: top;
+    background-size: cover;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+  }
+  .top {
+    height: 55vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.356);
+  }
+  .bottom {
+    height: 35vh;
+    width: 100%;
+    /* background-color: #222; */
+  }
+  .bottom::before {
+    content: "";
+    height: 35vh;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    backdrop-filter: blur(100px);
+    z-index: -1;
+    /* background-color: green; */
+    /* background-color: #; */
+  }
+
+  .content {
+    /* color: #222; */
+    color: white;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    padding-top: 10rem;
+    width: 80%;
+    /* background-color: greenyellow; */
+  }
+  .content h1 {
+    /* font-size: 20rem; */
+    margin-bottom: 2rem;
+  }
+  .city {
+    font-size: 5rem;
+    font-weight: 300;
+  }
+  .time {
+    font-size: 2rem;
+    font-weight: bolder;
+  }
+  .temp {
+    margin-top: 3rem;
+    font-size: 12rem;
+    font-weight: 500;
+  }
+  .content_bottom {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* background-color: red; */
+
+    color: white;
+  }
+  .bottom-h {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 2rem;
+  }
+  .li-container {
+    display: table;
+    width: 100%;
+    font-weight: 400;
+  }
+  .container-left {
+    display: table-cell;
+    width: 60%;
+  }
+  .container-right {
+    display: table-cell;
+    width: 40%;
+  }
+  .list-left,
+  .list-right {
+    font-size: 1.5rem;
+    color: #999;
+    list-style: none;
+    margin-top: 4rem;
+    line-height: 4rem;
+  }
+
+  .list-left {
+    margin-left: 10rem;
+  }
+
+  .list-right {
+    color: white;
+    margin-left: 5rem;
+  }
+  .back_icon-container {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background-color: transparent;
+    position: absolute;
+    border-radius: 100px;
+    border: 2px solid white;
+    top: 2rem;
+    left: 2rem;
+  }
+  .back-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    color: white;
+    font-weight: bold;
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  .card__left {
+    /* background-color: red; */
+    width: 50%;
+  }
+  .card__left-temp {
+    font-size: 6rem;
+  }
+  .card__left-info {
+    font-size: 3rem;
+  }
+
+  .card__left-date {
+    font-size: 1.5rem;
+  }
+  .card__left-icon {
+    font-size: 2rem;
+    left: 15rem;
+  }
+  .card__left-icon-text {
+    font-size: 1rem;
+  }
+  .card__right {
+    width: 50%;
+  }
+  .card__right::before {
+    width: 50%;
+  }
+  .right__content {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 50%;
+  }
+}

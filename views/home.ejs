@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="https://kit.fontawesome.com/bd44c94d16.js" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="weather-fonts.css">
+    
+    <link rel="stylesheet" href="mobileStyles.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="container__top">
+
+                <div class="heading-box">
+
+                    <h1 class="heading__primary--main">Hello</h1>
+                    <h1 class="heading__primary--sub">Check the weather by the city</h1>
+                </div>
+
+                <form id="search-form">
+                    <input type="text" class="search-city" id="search" required placeholder="Search city">
+
+                    <button class="search-icon-container">
+                        <ion-icon name="search-outline" class="icon__search" size="small"></ion-icon>
+                    </button>
+                </form>
+
+                <h1 class="suggest-heading">Suggest for you</h1>
+    
+            </div>
+            <div class="container__bottom">
+                <div class="carousel owl-carousel">
+                    <%data.forEach(el=>{%>
+                        
+                        <a href='/<%=el.city%>'> 
+                            <div class="card card-1" style='background-image: linear-gradient(
+                                to right,
+                                rgba(0, 0, 0, 0.5),
+                                rgba(0, 0, 0, 0.5)
+                              ),
+                              url("images/mobile/<%=el.city%>-m.jpg");'>
+                            <div class="cardHeading__container">
+    
+                                <p class="card__city-name"><%=el.city%></p>
+                                <p class="card__time"><%=el.time%>&nbsp;<%=el.amOrpm%></p>
+                            </div>
+                            <h1 class="card__temp"><%=el.temp%>&#176;</h1>
+                            
+                            <p class="card__status"><ion-icon name="rainy-outline" size="large" ></ion-icon> </p>
+                            <p class="card__status-text"><%=el.condition%></p>
+    
+                            
+                        </div>
+                    <%})%>
+                </a>
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+    
+   <script>
+       $(".carousel").owlCarousel({
+        margin:20,
+        loop:true,
+        autoplay:false,
+        autoplayTimeout:1000,
+        autoplayHoverPause:true,
+        responsive:{
+            0:{
+                items:2,
+                nav:false
+            }
+        }
+       });
+   </script>
+   <script src="home.js"></script>
+</body>
+</html>

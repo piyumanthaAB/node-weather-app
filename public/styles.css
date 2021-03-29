@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap");
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+html {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+html:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: #fff url("./images/sunny-1.jpg") center center fixed no-repeat;
+  background-size: cover;
+  background-position: left;
+  filter: blur(5px);
+  transform: scale(1.5);
+}
+
+body {
+  position: relative;
+  overflow: auto;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: #e2e2e2;
+  color: #333;
+  font-size: 100%;
+  font-family: "Lato", sans-serif;
+  line-height: 1.45;
+}
+
+.container {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 900px;
+}
+
+/* main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: red;
+} */
+
+/*LEFT SIDE STYLES START*/
+.content {
+  color: red;
+  display: table;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 600px;
+  background-color: rgba(53, 52, 52, 0.459);
+  border-radius: 5px;
+  /* background-image: url("./images/cloudy-1.jpg"); */
+  background-position: top;
+  background-size: cover;
+}
+
+.content__left {
+  width: 60%;
+  display: table-cell;
+}
+
+.info {
+  color: white;
+  position: absolute;
+  left: 3rem;
+  bottom: 6rem;
+}
+
+.info__text--temp {
+  display: inline;
+  font-size: 4rem;
+  margin-right: 1rem;
+}
+
+.info__text {
+  display: inline;
+  line-height: 0.1rem;
+}
+.info__text--city {
+  font-size: 2rem;
+}
+.info__icon {
+  position: absolute;
+  bottom: 0.5rem;
+  right: -5rem;
+}
+
+.info__icon .info__text--icon {
+  font-size: 2rem;
+  line-height: 0.01rem;
+  margin: 0;
+}
+.info__text--icon__text {
+  margin: 0;
+}
+
+/*LEFT SIDE STYLES FINISHED*/
+
+/*RIGHT SIDE STYLES START*/
+.content__right {
+  overflow: hidden;
+  width: 40%;
+  display: table-cell;
+  border-radius: 5px;
+}
+
+.content__right::before {
+  overflow: hidden;
+  width: 40%;
+  height: 100%;
+  content: "";
+  background-color: rgba(255, 255, 255, 0.1);
+  z-index: 10;
+  position: absolute;
+
+  top: 0;
+  right: 0;
+  backdrop-filter: blur(30px);
+  /* box-shadow: inset 0 0 0 500px rgba(255, 255, 255, 0.2); */
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+/*RIGHT SIDE STYLES FINISHED*/
