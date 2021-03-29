@@ -16,5 +16,7 @@
     "express": "^4.17.1",
     "node-device-detector": "^1.3.4",
     "superagent": "^6.1.0"
+  },"engines":{
+    "node":"^14"
   }
 }
